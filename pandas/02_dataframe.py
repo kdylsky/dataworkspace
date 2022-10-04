@@ -46,3 +46,25 @@ df = pd.DataFrame(data, columns=["이름", "학교","키"])
 print(df)
 df = pd.DataFrame(data, columns=["이름", "키","학교"])
 print(df)
+
+
+n = 25
+k = 3
+
+result = 0
+
+while True:
+    target = (n // k) * k # k로 나눌수 있는 가장 가까운 수를 찾는다.
+    result += (n - target) # 연산을 수행하는 횟수
+    n = target
+    print(target,result)
+    # 더이상 나눌 수 없을 때 반복문 탈출
+    if n < k:
+        break
+    
+    # k로 나누기
+    result += 1
+    n //= k
+
+# 마지막으로 남은 수에 대하여 1씩 빼기
+result += (n-1)
